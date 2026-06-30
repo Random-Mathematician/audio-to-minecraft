@@ -16,10 +16,12 @@ FORMAT = Audio.paInt16
 DEBUG = False
 
 def raiseOnDebug(err):
+	# Only in DEBUG raise an exception, otherwise just print it
 	if DEBUG: raise err
 	else: print(err)
 
 def debugPrint(*args, **kwargs):
+	# Print only in DEBUG mode
 	if DEBUG: print(*args, **kwargs)
 
 # The action function, to emulate Input events.

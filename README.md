@@ -9,7 +9,7 @@ The project is a one-filer meaning one can simply run it through python:
 python audio-to-minecraft.py
 ```
 
-Once run in a console/terminal, it will start to print out the note it detects from the system microphone, or "None" if it cannot hear/it detects a note outside its defined frequency range. It will also take control of the mouse and keyboard but not inhibit user input.
+Once run in a console/terminal, it will start to listen to the input from the system microphone, and take control of the mouse and keyboard but not inhibit user input.
 
 Whenever the program hears a musical note between C5 (523Hz, printed as `C`) and B6 (1976Hz, printed as `B'`), it compares it against a hard-coded table and simulates the corresponding mouse or keyboard input. The reason for this specific frequency range is that it coincides nicely with the range of a usual school recorder.
 
@@ -61,10 +61,10 @@ The program should run on any operating system but it has only been properly tes
 
 I might add the following features to the project at another time:
 
-- An option to turn off the printing
 - Support to freely change the control mapping.
 - Configuration to let the user change values such as the recording frequency or FFT chunk size.
 
 ## Known issues and bugs
 
 - Adjacent frequncies (differing in 1 semitone) collide somewhat.
+- The failsafe from within `pyautogui` does not always trigger.
